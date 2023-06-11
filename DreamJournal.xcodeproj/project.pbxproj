@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6124E61D2A343E4D00715FA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124E61C2A343E4D00715FA9 /* AppDelegate.swift */; };
+		6124E61F2A343E4D00715FA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124E61E2A343E4D00715FA9 /* SceneDelegate.swift */; };
+		6124E6212A343E4D00715FA9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124E6202A343E4D00715FA9 /* SignInViewController.swift */; };
+		6124E6242A343E4D00715FA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6124E6222A343E4D00715FA9 /* Main.storyboard */; };
+		6124E6272A343E4E00715FA9 /* DreamJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6124E6252A343E4E00715FA9 /* DreamJournal.xcdatamodeld */; };
+		6124E6292A343E5000715FA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6124E6282A343E5000715FA9 /* Assets.xcassets */; };
+		6124E62C2A343E5000715FA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6124E62A2A343E5000715FA9 /* LaunchScreen.storyboard */; };
+		6124E6372A343E5000715FA9 /* DreamJournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124E6362A343E5000715FA9 /* DreamJournalTests.swift */; };
+		6124E6412A343E5100715FA9 /* DreamJournalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124E6402A343E5100715FA9 /* DreamJournalUITests.swift */; };
+		6124E6432A343E5100715FA9 /* DreamJournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124E6422A343E5100715FA9 /* DreamJournalUITestsLaunchTests.swift */; };
+		61C46DE42A351B6D00821D0B /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 61C46DE22A351B6D00821D0B /* OFL.txt */; };
+		61C46DE52A351B6D00821D0B /* Abel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61C46DE32A351B6D00821D0B /* Abel-Regular.ttf */; };
+		DA25A2C32A3652C6006883D6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25A2C22A3652C6006883D6 /* SignUpViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6124E6332A343E5000715FA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6124E6112A343E4D00715FA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6124E6182A343E4D00715FA9;
+			remoteInfo = DreamJournal;
+		};
+		6124E63D2A343E5100715FA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6124E6112A343E4D00715FA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6124E6182A343E4D00715FA9;
+			remoteInfo = DreamJournal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6124E6192A343E4D00715FA9 /* DreamJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6124E61C2A343E4D00715FA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6124E61E2A343E4D00715FA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6124E6202A343E4D00715FA9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		6124E6232A343E4D00715FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6124E6262A343E4E00715FA9 /* DreamJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamJournal.xcdatamodel; sourceTree = "<group>"; };
+		6124E6282A343E5000715FA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6124E62B2A343E5000715FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6124E62D2A343E5000715FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6124E6322A343E5000715FA9 /* DreamJournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamJournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6124E6362A343E5000715FA9 /* DreamJournalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamJournalTests.swift; sourceTree = "<group>"; };
+		6124E63C2A343E5100715FA9 /* DreamJournalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamJournalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6124E6402A343E5100715FA9 /* DreamJournalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamJournalUITests.swift; sourceTree = "<group>"; };
+		6124E6422A343E5100715FA9 /* DreamJournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamJournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		61C46DE22A351B6D00821D0B /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		61C46DE32A351B6D00821D0B /* Abel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Abel-Regular.ttf"; sourceTree = "<group>"; };
+		DA25A2C22A3652C6006883D6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6124E6162A343E4D00715FA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6124E62F2A343E5000715FA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6124E6392A343E5100715FA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6124E6102A343E4D00715FA9 = {
+			isa = PBXGroup;
+			children = (
+				6124E61B2A343E4D00715FA9 /* DreamJournal */,
+				6124E6352A343E5000715FA9 /* DreamJournalTests */,
+				6124E63F2A343E5100715FA9 /* DreamJournalUITests */,
+				6124E61A2A343E4D00715FA9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6124E61A2A343E4D00715FA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6124E6192A343E4D00715FA9 /* DreamJournal.app */,
+				6124E6322A343E5000715FA9 /* DreamJournalTests.xctest */,
+				6124E63C2A343E5100715FA9 /* DreamJournalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6124E61B2A343E4D00715FA9 /* DreamJournal */ = {
+			isa = PBXGroup;
+			children = (
+				61C46DE12A351B6D00821D0B /* Abel */,
+				6124E61C2A343E4D00715FA9 /* AppDelegate.swift */,
+				6124E61E2A343E4D00715FA9 /* SceneDelegate.swift */,
+				6124E6202A343E4D00715FA9 /* SignInViewController.swift */,
+				6124E6222A343E4D00715FA9 /* Main.storyboard */,
+				6124E6282A343E5000715FA9 /* Assets.xcassets */,
+				6124E62A2A343E5000715FA9 /* LaunchScreen.storyboard */,
+				6124E62D2A343E5000715FA9 /* Info.plist */,
+				6124E6252A343E4E00715FA9 /* DreamJournal.xcdatamodeld */,
+				DA25A2C22A3652C6006883D6 /* SignUpViewController.swift */,
+			);
+			path = DreamJournal;
+			sourceTree = "<group>";
+		};
+		6124E6352A343E5000715FA9 /* DreamJournalTests */ = {
+			isa = PBXGroup;
+			children = (
+				6124E6362A343E5000715FA9 /* DreamJournalTests.swift */,
+			);
+			path = DreamJournalTests;
+			sourceTree = "<group>";
+		};
+		6124E63F2A343E5100715FA9 /* DreamJournalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6124E6402A343E5100715FA9 /* DreamJournalUITests.swift */,
+				6124E6422A343E5100715FA9 /* DreamJournalUITestsLaunchTests.swift */,
+			);
+			path = DreamJournalUITests;
+			sourceTree = "<group>";
+		};
+		61C46DE12A351B6D00821D0B /* Abel */ = {
+			isa = PBXGroup;
+			children = (
+				61C46DE22A351B6D00821D0B /* OFL.txt */,
+				61C46DE32A351B6D00821D0B /* Abel-Regular.ttf */,
+			);
+			path = Abel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6124E6182A343E4D00715FA9 /* DreamJournal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6124E6462A343E5100715FA9 /* Build configuration list for PBXNativeTarget "DreamJournal" */;
+			buildPhases = (
+				6124E6152A343E4D00715FA9 /* Sources */,
+				6124E6162A343E4D00715FA9 /* Frameworks */,
+				6124E6172A343E4D00715FA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DreamJournal;
+			productName = DreamJournal;
+			productReference = 6124E6192A343E4D00715FA9 /* DreamJournal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6124E6312A343E5000715FA9 /* DreamJournalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6124E6492A343E5100715FA9 /* Build configuration list for PBXNativeTarget "DreamJournalTests" */;
+			buildPhases = (
+				6124E62E2A343E5000715FA9 /* Sources */,
+				6124E62F2A343E5000715FA9 /* Frameworks */,
+				6124E6302A343E5000715FA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6124E6342A343E5000715FA9 /* PBXTargetDependency */,
+			);
+			name = DreamJournalTests;
+			productName = DreamJournalTests;
+			productReference = 6124E6322A343E5000715FA9 /* DreamJournalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6124E63B2A343E5100715FA9 /* DreamJournalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6124E64C2A343E5100715FA9 /* Build configuration list for PBXNativeTarget "DreamJournalUITests" */;
+			buildPhases = (
+				6124E6382A343E5100715FA9 /* Sources */,
+				6124E6392A343E5100715FA9 /* Frameworks */,
+				6124E63A2A343E5100715FA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6124E63E2A343E5100715FA9 /* PBXTargetDependency */,
+			);
+			name = DreamJournalUITests;
+			productName = DreamJournalUITests;
+			productReference = 6124E63C2A343E5100715FA9 /* DreamJournalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6124E6112A343E4D00715FA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6124E6182A343E4D00715FA9 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					6124E6312A343E5000715FA9 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 6124E6182A343E4D00715FA9;
+					};
+					6124E63B2A343E5100715FA9 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 6124E6182A343E4D00715FA9;
+					};
+				};
+			};
+			buildConfigurationList = 6124E6142A343E4D00715FA9 /* Build configuration list for PBXProject "DreamJournal" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6124E6102A343E4D00715FA9;
+			productRefGroup = 6124E61A2A343E4D00715FA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6124E6182A343E4D00715FA9 /* DreamJournal */,
+				6124E6312A343E5000715FA9 /* DreamJournalTests */,
+				6124E63B2A343E5100715FA9 /* DreamJournalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6124E6172A343E4D00715FA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C46DE52A351B6D00821D0B /* Abel-Regular.ttf in Resources */,
+				6124E62C2A343E5000715FA9 /* LaunchScreen.storyboard in Resources */,
+				6124E6292A343E5000715FA9 /* Assets.xcassets in Resources */,
+				61C46DE42A351B6D00821D0B /* OFL.txt in Resources */,
+				6124E6242A343E4D00715FA9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6124E6302A343E5000715FA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6124E63A2A343E5100715FA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6124E6152A343E4D00715FA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA25A2C32A3652C6006883D6 /* SignUpViewController.swift in Sources */,
+				6124E6212A343E4D00715FA9 /* SignInViewController.swift in Sources */,
+				6124E6272A343E4E00715FA9 /* DreamJournal.xcdatamodeld in Sources */,
+				6124E61D2A343E4D00715FA9 /* AppDelegate.swift in Sources */,
+				6124E61F2A343E4D00715FA9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6124E62E2A343E5000715FA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6124E6372A343E5000715FA9 /* DreamJournalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6124E6382A343E5100715FA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6124E6432A343E5100715FA9 /* DreamJournalUITestsLaunchTests.swift in Sources */,
+				6124E6412A343E5100715FA9 /* DreamJournalUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6124E6342A343E5000715FA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6124E6182A343E4D00715FA9 /* DreamJournal */;
+			targetProxy = 6124E6332A343E5000715FA9 /* PBXContainerItemProxy */;
+		};
+		6124E63E2A343E5100715FA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6124E6182A343E4D00715FA9 /* DreamJournal */;
+			targetProxy = 6124E63D2A343E5100715FA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6124E6222A343E4D00715FA9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6124E6232A343E4D00715FA9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6124E62A2A343E5000715FA9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6124E62B2A343E5000715FA9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6124E6442A343E5100715FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6124E6452A343E5100715FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6124E6472A343E5100715FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DJUGU7QX4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DreamJournal/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgiancollege.DreamJournal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6124E6482A343E5100715FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DJUGU7QX4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DreamJournal/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgiancollege.DreamJournal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6124E64A2A343E5100715FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DJUGU7QX4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgiancollege.DreamJournalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DreamJournal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DreamJournal";
+			};
+			name = Debug;
+		};
+		6124E64B2A343E5100715FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DJUGU7QX4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgiancollege.DreamJournalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DreamJournal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DreamJournal";
+			};
+			name = Release;
+		};
+		6124E64D2A343E5100715FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DJUGU7QX4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgiancollege.DreamJournalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DreamJournal;
+			};
+			name = Debug;
+		};
+		6124E64E2A343E5100715FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DJUGU7QX4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.georgiancollege.DreamJournalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DreamJournal;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6124E6142A343E4D00715FA9 /* Build configuration list for PBXProject "DreamJournal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6124E6442A343E5100715FA9 /* Debug */,
+				6124E6452A343E5100715FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6124E6462A343E5100715FA9 /* Build configuration list for PBXNativeTarget "DreamJournal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6124E6472A343E5100715FA9 /* Debug */,
+				6124E6482A343E5100715FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6124E6492A343E5100715FA9 /* Build configuration list for PBXNativeTarget "DreamJournalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6124E64A2A343E5100715FA9 /* Debug */,
+				6124E64B2A343E5100715FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6124E64C2A343E5100715FA9 /* Build configuration list for PBXNativeTarget "DreamJournalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6124E64D2A343E5100715FA9 /* Debug */,
+				6124E64E2A343E5100715FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6124E6252A343E4E00715FA9 /* DreamJournal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6124E6262A343E4E00715FA9 /* DreamJournal.xcdatamodel */,
+			);
+			currentVersion = 6124E6262A343E4E00715FA9 /* DreamJournal.xcdatamodel */;
+			path = DreamJournal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6124E6112A343E4D00715FA9 /* Project object */;
+}
