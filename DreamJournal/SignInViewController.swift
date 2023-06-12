@@ -45,7 +45,10 @@ class SignInViewController: UIViewController {
 
     }
 
-
+    @IBAction func LoginBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "ToProfile", sender: nil)
+    }
+    
     @IBAction func forgotPassBtn(_ sender: Any) {
         let refreshAlert = UIAlertController(title: "Sign out?", message: "You can always access your content by signing back in ", preferredStyle: UIAlertController.Style.alert)
                       refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
