@@ -19,6 +19,7 @@
 		6124E6432A343E5100715FA9 /* DreamJournalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124E6422A343E5100715FA9 /* DreamJournalUITestsLaunchTests.swift */; };
 		61C46DE42A351B6D00821D0B /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 61C46DE22A351B6D00821D0B /* OFL.txt */; };
 		61C46DE52A351B6D00821D0B /* Abel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61C46DE32A351B6D00821D0B /* Abel-Regular.ttf */; };
+		DA232C342A54A15E009167D2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DA232C332A54A15E009167D2 /* .gitignore */; };
 		DA25A2C32A3652C6006883D6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25A2C22A3652C6006883D6 /* SignUpViewController.swift */; };
 		DA25A2C72A36967F006883D6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25A2C62A36967F006883D6 /* ProfileViewController.swift */; };
 		DA25A2C92A37D46A006883D6 /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25A2C82A37D46A006883D6 /* AddJournalEntryViewController.swift */; };
@@ -58,6 +59,7 @@
 		6124E6422A343E5100715FA9 /* DreamJournalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamJournalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		61C46DE22A351B6D00821D0B /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		61C46DE32A351B6D00821D0B /* Abel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Abel-Regular.ttf"; sourceTree = "<group>"; };
+		DA232C332A54A15E009167D2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DA25A2C22A3652C6006883D6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DA25A2C62A36967F006883D6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DA25A2C82A37D46A006883D6 /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		6124E6102A343E4D00715FA9 = {
 			isa = PBXGroup;
 			children = (
+				DA232C332A54A15E009167D2 /* .gitignore */,
 				6124E61B2A343E4D00715FA9 /* DreamJournal */,
 				6124E6352A343E5000715FA9 /* DreamJournalTests */,
 				6124E63F2A343E5100715FA9 /* DreamJournalUITests */,
@@ -261,6 +264,7 @@
 				6124E62C2A343E5000715FA9 /* LaunchScreen.storyboard in Resources */,
 				6124E6292A343E5000715FA9 /* Assets.xcassets in Resources */,
 				61C46DE42A351B6D00821D0B /* OFL.txt in Resources */,
+				DA232C342A54A15E009167D2 /* .gitignore in Resources */,
 				6124E6242A343E4D00715FA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
