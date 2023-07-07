@@ -23,6 +23,9 @@
 		DA25A2C32A3652C6006883D6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25A2C22A3652C6006883D6 /* SignUpViewController.swift */; };
 		DA25A2C72A36967F006883D6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25A2C62A36967F006883D6 /* ProfileViewController.swift */; };
 		DA25A2C92A37D46A006883D6 /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25A2C82A37D46A006883D6 /* AddJournalEntryViewController.swift */; };
+		DA78409D2A5789A30091AF96 /* DataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA78409C2A5789A30091AF96 /* DataSeeder.swift */; };
+		DA7840A02A5792550091AF96 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = DA78409E2A5792550091AF96 /* users.json */; };
+		DA7840A12A5792550091AF96 /* dreams.json in Resources */ = {isa = PBXBuildFile; fileRef = DA78409F2A5792550091AF96 /* dreams.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		DA25A2C22A3652C6006883D6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DA25A2C62A36967F006883D6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DA25A2C82A37D46A006883D6 /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
+		DA78409C2A5789A30091AF96 /* DataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSeeder.swift; sourceTree = "<group>"; };
+		DA78409E2A5792550091AF96 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		DA78409F2A5792550091AF96 /* dreams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dreams.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,9 @@
 				DA25A2C22A3652C6006883D6 /* SignUpViewController.swift */,
 				DA25A2C62A36967F006883D6 /* ProfileViewController.swift */,
 				DA25A2C82A37D46A006883D6 /* AddJournalEntryViewController.swift */,
+				DA78409C2A5789A30091AF96 /* DataSeeder.swift */,
+				DA78409F2A5792550091AF96 /* dreams.json */,
+				DA78409E2A5792550091AF96 /* users.json */,
 			);
 			path = DreamJournal;
 			sourceTree = "<group>";
@@ -264,8 +273,10 @@
 				6124E62C2A343E5000715FA9 /* LaunchScreen.storyboard in Resources */,
 				6124E6292A343E5000715FA9 /* Assets.xcassets in Resources */,
 				61C46DE42A351B6D00821D0B /* OFL.txt in Resources */,
+				DA7840A02A5792550091AF96 /* users.json in Resources */,
 				DA232C342A54A15E009167D2 /* .gitignore in Resources */,
 				6124E6242A343E4D00715FA9 /* Main.storyboard in Resources */,
+				DA7840A12A5792550091AF96 /* dreams.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +306,7 @@
 				6124E6212A343E4D00715FA9 /* SignInViewController.swift in Sources */,
 				6124E6272A343E4E00715FA9 /* DreamJournal.xcdatamodeld in Sources */,
 				DA25A2C92A37D46A006883D6 /* AddJournalEntryViewController.swift in Sources */,
+				DA78409D2A5789A30091AF96 /* DataSeeder.swift in Sources */,
 				6124E61D2A343E4D00715FA9 /* AppDelegate.swift in Sources */,
 				6124E61F2A343E4D00715FA9 /* SceneDelegate.swift in Sources */,
 			);

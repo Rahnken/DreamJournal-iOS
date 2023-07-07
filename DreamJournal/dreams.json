@@ -1,0 +1,190 @@
+[
+    {
+      "dream_id": 1000,
+      "title": "Mysterious Forest",
+      "category": "Adventure",
+      "date": "2023-07-01",
+      "feeling": "Excited",
+      "imageURL": "https://example.com/forest.jpg",
+      "dream_description": "I found myself exploring a dense forest filled with enchanting creatures.",
+      "recurringDream": false,
+      "user_id": 0
+    },
+    {
+      "dream_id": 1001,
+      "title": "Flying High",
+      "category": "Fantasy",
+      "date": "2023-06-28",
+      "feeling": "Joyful",
+      "imageURL": "https://example.com/flying.jpg",
+      "dream_description": "I had the ability to fly and soared through the clouds.",
+      "recurringDream": true,
+      "user_id": 1
+    },
+    {
+      "dream_id": 1002,
+      "title": "Underwater Wonderland",
+      "category": "Nature",
+      "date": "2023-07-04",
+      "feeling": "Amazed",
+      "imageURL": "https://example.com/underwater.jpg",
+      "dream_description": "I discovered a vibrant coral reef teeming with colorful fish and marine life.",
+      "recurringDream": false,
+      "user_id": 2
+    },
+    {
+      "dream_id": 1003,
+      "title": "Haunted Mansion",
+      "category": "Horror",
+      "date": "2023-06-30",
+      "feeling": "Terrified",
+      "imageURL": "https://example.com/mansion.jpg",
+      "dream_description": "I entered a spooky mansion where ghostly apparitions lurked at every corner.",
+      "recurringDream": true,
+      "user_id": 0
+    },
+    {
+      "dream_id": 1004,
+      "title": "Jungle Expedition",
+      "category": "Adventure",
+      "date": "2023-07-02",
+      "feeling": "Thrilled",
+      "imageURL": "https://example.com/jungle.jpg",
+      "dream_description": "I embarked on an exhilarating journey through a dense jungle, encountering wild animals along the way.",
+      "recurringDream": false,
+      "user_id": 1
+    },
+    {
+      "dream_id": 1005,
+      "title": "Magical Castle",
+      "category": "Fantasy",
+      "date": "2023-07-05",
+      "feeling": "Enchanted",
+      "imageURL": "https://example.com/castle.jpg",
+      "dream_description": "I explored a magnificent castle with towering turrets and secret passageways.",
+      "recurringDream": true,
+      "user_id": 2
+    },
+    {
+        "dream_id": 1200,
+        "title": "Mysterious Forest",
+        "category": "Adventure",
+        "date": "2023-07-01",
+        "feeling": "Excited",
+        "imageURL": "https://example.com/forest.jpg",
+        "dream_description": "I found myself exploring a dense forest filled with enchanting creatures.",
+        "recurringDream": false,
+        "user_id": 0
+      },
+      {
+        "dream_id": 1201,
+        "title": "Flying High",
+        "category": "Fantasy",
+        "date": "2023-06-28",
+        "feeling": "Joyful",
+        "imageURL": "https://example.com/flying.jpg",
+        "dream_description": "I had the ability to fly and soared through the clouds.",
+        "recurringDream": true,
+        "user_id": 1
+      },
+      {
+        "dream_id": 1202,
+        "title": "Underwater Wonderland",
+        "category": "Nature",
+        "date": "2023-07-04",
+        "feeling": "Amazed",
+        "imageURL": "https://example.com/underwater.jpg",
+        "dream_description": "I discovered a vibrant coral reef teeming with colorful fish and marine life.",
+        "recurringDream": false,
+        "user_id": 2
+      },
+      {
+        "dream_id": 1203,
+        "title": "Haunted Mansion",
+        "category": "Horror",
+        "date": "2023-06-30",
+        "feeling": "Terrified",
+        "imageURL": "https://example.com/mansion.jpg",
+        "dream_description": "I entered a spooky mansion where ghostly apparitions lurked at every corner.",
+        "recurringDream": false,
+        "user_id": 0
+      },
+      {
+        "dream_id": 1204,
+        "title": "Jungle Expedition",
+        "category": "Adventure",
+        "date": "2023-07-02",
+        "feeling": "Thrilled",
+        "imageURL": "https://example.com/jungle.jpg",
+        "dream_description": "I embarked on an exhilarating journey through a dense jungle, encountering wild animals along the way.",
+        "recurringDream": true,
+        "user_id": 1
+      },
+      {
+        "dream_id": 1205,
+        "title": "Magical Castle",
+        "category": "Fantasy",
+        "date": "2023-07-05",
+        "feeling": "Enchanted",
+        "imageURL": "https://example.com/castle.jpg",
+        "dream_description": "I explored a magnificent castle with towering turrets and secret passageways.",
+        "recurringDream": false,
+        "user_id": 2
+      },
+      {
+        "dream_id": 1206,
+        "title": "Lost in Space",
+        "category": "Sci-Fi",
+        "date": "2023-07-03",
+        "feeling": "Astounded",
+        "imageURL": "https://example.com/space.jpg",
+        "dream_description": "I found myself drifting through the vastness of space, surrounded by stars and galaxies.",
+        "recurringDream": false,
+        "user_id": 0
+      },
+      {
+        "dream_id": 1207,
+        "title": "Beach Paradise",
+        "category": "Nature",
+        "date": "2023-06-29",
+        "feeling": "Relaxed",
+        "imageURL": "https://example.com/beach.jpg",
+        "dream_description": "I strolled along a pristine beach, feeling the warm sand between my toes and listening to the soothing sound of waves.",
+        "recurringDream": true,
+        "user_id": 1
+      },
+      {
+        "dream_id": 1208,
+        "title": "Zombie Apocalypse",
+        "category": "Horror",
+        "date": "2023-07-07",
+        "feeling": "Fear",
+        "imageURL": "https://example.com/zombie.jpg",
+        "dream_description": "I fought off hordes of zombies in a post-apocalyptic world.",
+        "recurringDream": false,
+        "user_id": 2
+      },
+      {
+        "dream_id": 1209,
+        "title": "Dreamy Wonderland",
+        "category": "Fantasy",
+        "date": "2023-07-10",
+        "feeling": "Blissful",
+        "imageURL": "https://example.com/wonderland.jpg",
+        "dream_description": "I visited a whimsical wonderland filled with magical creatures and floating castles.",
+        "recurringDream": true,
+        "user_id": 0
+      },
+      {
+        "dream_id": 1210,
+        "title": "Mountain Adventure",
+        "category": "Nature",
+        "date": "2023-07-08",
+        "feeling": "Energized",
+        "imageURL": "https://example.com/mountain.jpg",
+        "dream_description": "I climbed towering mountains and enjoyed breathtaking views from the summit.",
+        "recurringDream": false,
+        "user_id": 1
+      }
+  ]
+  
