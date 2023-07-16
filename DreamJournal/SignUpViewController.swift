@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func CreateUser(_ sender: Any) {
         performSegue(withIdentifier: "toLogin", sender: nil)
-
+        
     }
     
     
