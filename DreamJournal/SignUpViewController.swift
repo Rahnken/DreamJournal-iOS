@@ -33,6 +33,6 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func CreateUser(_ sender: Any) {
-        performSegue(withIdentifier: "ToProfile", sender: nil)
+        performSegue(withIdentifier: "toLogin", sender: nil)
     }
 }
