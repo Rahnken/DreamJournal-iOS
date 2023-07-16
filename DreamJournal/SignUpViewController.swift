@@ -24,14 +24,9 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
-    var dreams : [DreamEntryTable] = []
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchData()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -40,12 +35,6 @@ class SignUpViewController: UIViewController {
         
     }
     
-    
-    @IBAction func CreateUser(_ sender: Any) {
-        
-        performSegue(withIdentifier: "ToProfile", sender: nil)
-        
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToProfile" {
