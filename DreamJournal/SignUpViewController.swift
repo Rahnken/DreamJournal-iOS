@@ -35,23 +35,9 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func fetchData()
-    {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
-        {
-            return
-        }
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest: NSFetchRequest<DreamEntryTable> = DreamEntryTable.fetchRequest()
-        
-        do {
-            dreams = try context.fetch(fetchRequest)
-            //                tableView.reloadData()
-        } catch {
-            print("Failed to fetch data: \(error)")
-        }
+    @IBAction func CreateUser(_ sender: Any) {
+        performSegue(withIdentifier: "toLogin", sender: nil)
+
     }
     
     
