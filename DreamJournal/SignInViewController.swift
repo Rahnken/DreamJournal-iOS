@@ -47,6 +47,9 @@ class SignInViewController: UIViewController {
 
     @IBAction func LoginBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "ToProfile", sender: nil)
+        
+        
+        
     }
     
     @IBAction func forgotPassBtn(_ sender: Any) {

@@ -2,37 +2,76 @@
 //  SignUpVC.swift
 //  DreamJournalApp
 //
-//  Created by Ravi  on 2023-06-10.
-//
+//  Created by Supreet on 2023-07-16.
+
 
 import UIKit
+import CoreData
 
 class SignUpViewController: UIViewController {
-    
     
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-   
-    @IBOutlet weak var Username: UITextField!
+    @IBOutlet weak var usernameTextfield: UITextField!
+    
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
+    @IBOutlet weak var firstNameTextField: UITextField!
+    
+    @IBOutlet weak var lastNameTextField: UITextField!
+    
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    
+    var dreams : [DreamEntryTable] = []
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let googleImg = UIImage(named: "Google.png")
-//        googleBtn.setImage(googleImg, for: .normal)
-        
-        //googleBtn.setImage(UIImage(named: "Google"), for: .normal)
-    //facebookBtn.setImage(UIImage(named: "Facebook"), for: .normal)
-       // appleBtn.setImage(UIImage(named: "Apple"), for: .normal)
+        fetchData()
         
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func CreateUser(_ sender: Any) {
-        performSegue(withIdentifier: "ToProfile", sender: nil)
+    func fetchData()
+    {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
+        {
+            return
+        }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<DreamEntryTable> = DreamEntryTable.fetchRequest()
+        
+        do {
+            dreams = try context.fetch(fetchRequest)
+            //                tableView.reloadData()
+        } catch {
+            print("Failed to fetch data: \(error)")
+        }
     }
+    
+    
+    @IBAction func CreateUser(_ sender: Any) {
+        
+        performSegue(withIdentifier: "ToProfile", sender: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToProfile" {
+            if let profileVC = segue.destination as? ProfileViewController {
+                profileVC.username = usernameTextfield.text ?? ""
+                profileVC.firstName = firstNameTextField.text ?? ""
+                profileVC.lastName = lastNameTextField.text ?? ""
+                profileVC.phoneNumber = phoneNumberTextField.text ?? ""
+            }
+        }
+    }
+
+    
+    
 }

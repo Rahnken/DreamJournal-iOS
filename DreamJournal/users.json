@@ -1,0 +1,39 @@
+[
+    {
+        "user_id":0,
+        "firstname":"Eric",
+        "lastname":"Donnelly",
+        "username":"edonn",
+        "password":"password!",
+        "email":"eric@example.com",
+        "phone_number":"9051234567"
+    },
+    {
+        "user_id":1,
+        "firstname":"Vishnu",
+        "lastname":"Nair",
+        "username":"vnair",
+        "password":"password!",
+        "email":"vishnu@example.com",
+        "phone_number":"5551234567"
+    },
+    {
+        "user_id":2,
+        "firstname":"Rajanpreet",
+        "lastname":"Singh",
+        "username":"rsing",
+        "password":"password!",
+        "email":"rajanpreet@example.com",
+        "phone_number":"5551234567"
+    },
+    {
+        "user_id":3,
+        "firstname":"Supreet",
+        "lastname":"Kler",
+        "username":"skler",
+        "password":"password!",
+        "email":"supreet@example.com",
+        "phone_number":"5485470001"
+    }
+]
+    
