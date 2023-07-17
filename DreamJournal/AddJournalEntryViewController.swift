@@ -7,46 +7,38 @@
 
 import Foundation
 import UIKit
-import MobileCoreServices
+import CoreData
 
 class AddJournalEntryViewController : UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate
-, UIPickerViewDelegate, UIPickerViewDataSource
 {
-    // Creating Category Dropdown
-    let dropdownTextField = UITextField()
-    let dropdownData = ["Option 1", "Option 2", "Option 3"]
-    let pickerView = UIPickerView()
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var categoriesTextField: UITextField!
+    @IBOutlet weak var feelingsTextField: UITextField!
+    @IBOutlet weak var recurringSwitch: UISwitch!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
+    var dream : DreamEntryTable?
     // Create instance of UI Image Picker
     let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         // Declare the delegate for the image picker is our
         imagePicker.delegate = self
         
-        // Set up the dropdown text field
-        dropdownTextField.borderStyle = .roundedRect
-        dropdownTextField.textAlignment = .center
-        dropdownTextField.placeholder = "Select an option"
-        view.addSubview(dropdownTextField)
-        dropdownTextField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            dropdownTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            dropdownTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            dropdownTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            dropdownTextField.heightAnchor.constraint(equalToConstant: 40)
-        ])
-        
-        // Set up the picker view
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        dropdownTextField.inputView = pickerView
-        
-        // Add a toolbar with a done button to dismiss the pickerView
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dropdownDoneButtonTapped))
-        toolbar.setItems([doneButton], animated: true)
-        dropdownTextField.inputAccessoryView = toolbar
+        if let dream = dream {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YYYY-MM-DD"
+            
+            titleTextField.text = dream.title
+            descriptionTextView.text = dream.dream_description
+            categoriesTextField.text = dream.category
+            feelingsTextField.text = dream.feeling
+            recurringSwitch.isOn = dream.recurringDream
+            datePicker.date = dateFormatter.date(from: dream.date!)!
+        }
+       
     }
     
     @IBAction func BackButtonPushed (_ sender: Any){
@@ -54,8 +46,52 @@ class AddJournalEntryViewController : UIViewController ,UIImagePickerControllerD
         
     }
     @IBAction func ConfirmButtonPushed (_ sender: Any){
-        dismiss(animated: true, completion: nil)
-        // TODO: Update this when we have a model for entries completed
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
+        {
+            return
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-DD"
+        
+        let title:String = titleTextField.text ?? ""
+        let dream_description:String = descriptionTextView.text ?? ""
+        let category:String = categoriesTextField.text ?? ""
+        let feeling:String = feelingsTextField.text ?? ""
+        let reccuringDream:Bool = recurringSwitch.isOn
+        let date:String = dateFormatter.string(from: datePicker.date)
+       
+        let context = appDelegate.persistentContainer.viewContext
+        
+        
+        if let dream = dream {
+            dream.title=title
+            dream.dream_description=dream_description
+            dream.category=category
+            dream.feeling=feeling
+            dream.recurringDream=reccuringDream
+            dream.date=date
+            dream.user_id=0
+            dream.dream_id=1400
+            
+        } else{
+            let newDream = DreamEntryTable(context: context)
+            newDream.title=title
+            newDream.dream_description=dream_description
+            newDream.category=category
+            newDream.feeling=feeling
+            newDream.recurringDream=reccuringDream
+            newDream.date=date
+            newDream.user_id=0
+            newDream.dream_id=1400
+        }
+        do {
+            try context.save()
+            dismiss(animated: true, completion: nil)
+        } catch {
+            print("Failed to save data: \(error)")
+        }
+        
     }
     
     
@@ -73,29 +109,6 @@ class AddJournalEntryViewController : UIViewController ,UIImagePickerControllerD
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         //TODO: Handle cancel event if needed
     }
-    
-    // MARK: - UIPickerViewDelegate & UIPickerViewDataSource
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1 // Number of components in the picker (in this case, a single column)
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dropdownData.count // Number of rows in the picker
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dropdownData[row] // Text to display for each row in the picker
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        dropdownTextField.text = dropdownData[row] // Update the text field with the selected option
-    }
-    
-    @objc func dropdownDoneButtonTapped() {
-        dropdownTextField.resignFirstResponder() // Dismiss the pickerView
-    }
-    
     
     
 }
