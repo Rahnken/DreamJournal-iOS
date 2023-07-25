@@ -21,7 +21,7 @@ class ProfileViewController : UIViewController {
     
     @IBOutlet weak var phoneNumberTextfield: UITextField!
     
-    var signupVC : SignUpViewController?
+    
     
     var username :  String = ""
     var firstName : String = ""
@@ -54,7 +54,6 @@ class ProfileViewController : UIViewController {
         // Save the changes in the context
         do {
             try context.save()
-            signupVC?.fetchData()
             dismiss(animated: true, completion: nil)
         } catch {
             print("Failed to save data: \(error)")

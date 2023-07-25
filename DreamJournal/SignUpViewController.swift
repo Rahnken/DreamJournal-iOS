@@ -24,42 +24,17 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
-    var dreams : [DreamEntryTable] = []
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchData()
-        
         // Do any additional setup after loading the view.
     }
     
-    func fetchData()
-    {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
-        {
-            return
-        }
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest: NSFetchRequest<DreamEntryTable> = DreamEntryTable.fetchRequest()
-        
-        do {
-            dreams = try context.fetch(fetchRequest)
-            //                tableView.reloadData()
-        } catch {
-            print("Failed to fetch data: \(error)")
-        }
-    }
-    
-    
     @IBAction func CreateUser(_ sender: Any) {
-        
-        performSegue(withIdentifier: "ToProfile", sender: nil)
+        performSegue(withIdentifier: "toLogin", sender: nil)
         
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToProfile" {
