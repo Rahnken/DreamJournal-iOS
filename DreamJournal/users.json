@@ -34,6 +34,16 @@
         "password":"password!",
         "email":"supreet@example.com",
         "phone_number":"5485470001"
+    },
+    {
+        "user_id":4,
+        "firstname":"Janak",
+        "lastname":"Makwana",
+        "username":"jadee",
+        "password":"password!",
+        "email":"janak@example.com",
+        "phone_number":"2891234567"
     }
+
 ]
     
