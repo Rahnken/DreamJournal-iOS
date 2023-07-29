@@ -30,7 +30,45 @@ class SignUpViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    func saveUserDataToJSON() {
+        
+           let userData: [String: String] = [
+            "email": emailTextField.text ?? "",
+            "username": usernameTextfield.text ?? "",
+            "password": passwordTextField.text ?? "",
+            "firstName": firstNameTextField.text ?? "",
+            "lastName": lastNameTextField.text ?? "",
+            "phoneNumber": phoneNumberTextField.text ?? ""
+        ]
+           
+           if let fileURL = Bundle.main.url(forResource: "users", withExtension: "json") {
+               do {
+                   // Read the existing JSON data from the file
+                   let jsonData = try Data(contentsOf: fileURL)
+                   
+                   // Deserialize the JSON data into an array of dictionaries
+                   var jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: String]] ?? []
+                   
+                   jsonArray.append(userData)
+                   
+                   let updatedJsonData = try JSONSerialization.data(withJSONObject: jsonArray, options: .prettyPrinted)
+                   
+                   try updatedJsonData.write(to: fileURL)
+                   
+                   print("User data saved to 'users.json' successfully.")
+               } catch {
+                   print("Error writing to 'users.json': \(error)")
+               }
+           } else {
+               print("Failed to get URL for 'users.json' in the main bundle.")
+           }
+       }
+
+    
     @IBAction func CreateUser(_ sender: Any) {
+        
+        saveUserDataToJSON()
         performSegue(withIdentifier: "toLogin", sender: nil)
         
     }

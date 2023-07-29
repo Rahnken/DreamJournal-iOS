@@ -96,7 +96,7 @@ class SignInViewController: UIViewController {
                 performSegue(withIdentifier: "ToProfile", sender: nil)
             } else {
                 // Invalid credentials, display an error message
-                let alert = UIAlertController(title: "Login Failed", message: "Invalid username or password", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Login Failed", message: "Invalid username or password!", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
             }
