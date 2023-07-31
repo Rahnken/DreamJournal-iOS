@@ -451,6 +451,21 @@
             </objects>
             <point key="canvasLocation" x="104.65116279069767" y="-666.3090128755365"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="wdJ-Uf-rMv">
+            <objects>
+                <viewController id="ETK-aB-8B0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vjU-e9-Qie">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dc4-AD-Z3K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8g-I4-NHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="-666"/>
+        </scene>
         <!--Explore Your Dreams-->
         <scene sceneID="HF4-JL-6Fx">
             <objects>
