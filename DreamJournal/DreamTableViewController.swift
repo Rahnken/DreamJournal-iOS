@@ -53,6 +53,11 @@ class DreamTableViewController: UITableViewController
         return cell
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         performSegue(withIdentifier: "AddEditDream", sender: indexPath)

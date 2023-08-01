@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DreamEntryTable" representedClassName="DreamEntryTable" syncable="YES" codeGenerationType="class">
         <attribute name="category" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="String"/>
@@ -10,6 +10,10 @@
         <attribute name="recurringDream" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="user_id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <entity name="UserTable" representedClassName="UserTable" syncable="YES" codeGenerationType="class">
         <attribute name="email" attributeType="String"/>

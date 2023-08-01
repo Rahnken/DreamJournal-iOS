@@ -52,10 +52,10 @@ class SignInViewController: UIViewController {
         passwordTextField.text = ""
         usernameTextField.becomeFirstResponder()
     }
+        
 
     @IBAction func LoginBtnPressed(_ sender: Any) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
-        {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         
@@ -63,20 +63,16 @@ class SignInViewController: UIViewController {
         
         guard let username = usernameTextField.text,
               let password = passwordTextField.text,
-              !username.isEmpty, !password.isEmpty else
-        {
+              !username.isEmpty, !password.isEmpty else {
             // Display an alert message if any field is empty
-            let alert = UIAlertController(title: "Login Failed", message: "username and password are required", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Login Failed", message: "Username and password are required", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
             
             // Shift focus to the empty text field
-            if usernameTextField.text?.isEmpty == true
-            {
+            if usernameTextField.text?.isEmpty == true {
                 usernameTextField.becomeFirstResponder()
-            }
-            else if passwordTextField.text?.isEmpty == true
-            {
+            } else if passwordTextField.text?.isEmpty == true {
                 passwordTextField.becomeFirstResponder()
             }
             return
@@ -84,21 +80,36 @@ class SignInViewController: UIViewController {
         
         // Create a fetch request to check if the user exists
         let fetchRequest: NSFetchRequest<UserTable> = UserTable.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "username = %@ AND password = %@", username, password)
+        fetchRequest.predicate = NSPredicate(format: "username = %@", username)
         
         do {
             let users = try context.fetch(fetchRequest)
             
-            if let user = users.first
-            {
-                print("Login Successful")
-                // Successful login
-                performSegue(withIdentifier: "ToProfile", sender: nil)
+            if let user = users.first {
+                if user.password == password {
+                    print("Login Successful")
+                    // Successful login
+                    performSegue(withIdentifier: "ToProfile", sender: nil)
+                } else {
+                    // Invalid password, display an error message
+                    let alert = UIAlertController(title: "Login Failed", message: "Invalid password!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    present(alert, animated: true, completion: nil)
+                }
             } else {
-                // Invalid credentials, display an error message
-                let alert = UIAlertController(title: "Login Failed", message: "Invalid username or password!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                present(alert, animated: true, completion: nil)
+                // New user, save the user in CoreData
+                let newUser = UserTable(context: context)
+                newUser.username = username
+                newUser.password = password
+                
+                do {
+                    try context.save()
+                    print("New user registered successfully.")
+                    performSegue(withIdentifier: "ToProfile", sender: nil)
+                } catch {
+                    // Handle the error appropriately (e.g., display an alert)
+                    print("Failed to save new user: \(error)")
+                }
             }
         } catch {
             // Handle the error appropriately (e.g., display an alert)
