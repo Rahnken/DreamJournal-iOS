@@ -274,15 +274,6 @@
                                     <constraint firstAttribute="trailing" secondItem="Js0-mM-3IK" secondAttribute="trailing" id="tnK-Id-4NF"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjp-2E-sze">
-                                <rect key="frame" x="215" y="777" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <segue destination="ViN-wx-ip1" kind="showDetail" id="rLP-4B-Cd1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -790,7 +781,7 @@
             <objects>
                 <viewController id="ViN-wx-ip1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3XY-oJ-cEx">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yim-4g-fuj">
@@ -900,8 +891,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rhH-xI-vgv"/>
-        <segue reference="iDP-zk-si5"/>
+        <segue reference="XTi-S6-9zD"/>
+        <segue reference="FFS-bt-LR9"/>
         <segue reference="UHt-gi-Dk3"/>
     </inferredMetricsTieBreakers>
     <resources>
