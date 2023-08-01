@@ -517,20 +517,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0C-BD-XAl">
-                                <rect key="frame" x="39" y="730" width="353" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Add New Journal Entry">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="21"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="addNewJournalButton:" destination="13H-Va-hAT" eventType="touchUpInside" id="eeF-sS-Br5"/>
-                                    <segue destination="Uen-tH-Szt" kind="show" id="dhP-vs-oDo"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="User Name" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Od3-PS-eQE">
                                 <rect key="frame" x="0.0" y="413" width="430" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -544,16 +530,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWU-db-Iat">
-                                <rect key="frame" x="95" y="788" width="251" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Go to Dreams"/>
-                                <connections>
-                                    <segue destination="MJf-y3-Zru" kind="show" id="rIo-Xt-aJm"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG6-ni-APW">
                                 <rect key="frame" x="39" y="666" width="353" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -754,6 +730,62 @@
             <point key="canvasLocation" x="-675" y="127"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="z5G-M6-IP5">
+            <objects>
+                <viewController id="6rJ-5k-uo3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jvw-rW-g96">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dream_Journal_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="SwA-rS-nyi">
+                                <rect key="frame" x="28" y="-279" width="240" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="C2C-SA-8BZ">
+                                <rect key="frame" x="0.0" y="505" width="430" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Phone Number" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="VcP-J8-ftH">
+                                <rect key="frame" x="0.0" y="585" width="430" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="User Name" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="fgj-qe-qGs">
+                                <rect key="frame" x="0.0" y="341" width="430" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bD-RT-wP6">
+                                <rect key="frame" x="84" y="247" width="262" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dream_Journal_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="xm3-jp-dHa">
+                                <rect key="frame" x="95" y="38" width="240" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="ReZ-tQ-6lM">
+                                <rect key="frame" x="0.0" y="419" width="430" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cmw-GI-5HC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFP-c9-AjY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-707" y="853"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="EsR-ex-ShL">
             <objects>
                 <viewController id="ViN-wx-ip1" sceneMemberID="viewController">
@@ -789,6 +821,9 @@
                                 <buttonConfiguration key="configuration" style="gray" title="Dream Journal See all your entries">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="MJf-y3-Zru" kind="showDetail" id="UHt-gi-Dk3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1r8-3K-kl8">
                                 <rect key="frame" x="313" y="206" width="97" height="152"/>
@@ -798,6 +833,9 @@
                                 <buttonConfiguration key="configuration" style="gray" title="+">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Uen-tH-Szt" kind="showDetail" id="rhH-xI-vgv"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent Entries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci3-sP-W1Y">
                                 <rect key="frame" x="33" y="398" width="127" height="24"/>
@@ -814,6 +852,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="menu-icon-12"/>
+                                <connections>
+                                    <segue destination="13H-Va-hAT" kind="showDetail" id="iDP-zk-si5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfw-ib-2TR">
                                 <rect key="frame" x="344" y="125" width="55" height="56"/>
@@ -829,6 +870,18 @@
                                 <buttonConfiguration key="configuration" style="plain" title="View all &gt;">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="MJf-y3-Zru" kind="showDetail" id="I78-xP-vo7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gr6-Yg-kTM">
+                                <rect key="frame" x="336" y="69" width="72" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="icone-utilisateur-orange (1)"/>
+                                <connections>
+                                    <segue destination="6rJ-5k-uo3" kind="showDetail" id="Q8b-Us-89z"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-Xp-0Pn">
                                 <rect key="frame" x="33" y="438" width="366" height="203"/>
@@ -847,8 +900,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dhP-vs-oDo"/>
-        <segue reference="rIo-Xt-aJm"/>
+        <segue reference="rhH-xI-vgv"/>
+        <segue reference="iDP-zk-si5"/>
+        <segue reference="UHt-gi-Dk3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Dream_Journal_Icon" width="291" height="233"/>
@@ -856,6 +910,7 @@
         <image name="appleicon" width="96" height="96"/>
         <image name="fbicon" width="96" height="96"/>
         <image name="google-logo" width="1024" height="1024"/>
+        <image name="icone-utilisateur-orange (1)" width="48" height="48"/>
         <image name="images (1)" width="48" height="48"/>
         <image name="menu-icon-12" width="48" height="48"/>
         <systemColor name="labelColor">
