@@ -140,6 +140,7 @@
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
                                             <action selector="LoginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4D-Ms-wM0"/>
+                                            <segue destination="kJ9-8A-t8w" kind="show" identifier="ToDashboard" id="EUx-BG-yTM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -457,7 +458,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="wQv-oI-4eW"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="yqy-uK-g5b">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lTi-jO-zzY">
-                                <rect key="frame" x="20" y="5" width="106" height="34.333333333333336"/>
+                                <rect key="frame" x="20" y="11" width="106" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Edit Profile"/>
@@ -465,14 +466,14 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="296-Q1-B4P">
                             <connections>
-                                <segue destination="Uen-tH-Szt" kind="presentation" identifier="AddEditDream" id="XTi-S6-9zD"/>
+                                <segue destination="Uen-tH-Szt" kind="show" identifier="AddEditDream" id="XTi-S6-9zD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3WM-KR-Osh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="147.90697674418604" y="126.82403433476395"/>
+            <point key="canvasLocation" x="1046.5116279069766" y="126.82403433476395"/>
         </scene>
         <!--Add a new Dream-->
         <scene sceneID="OrO-Cj-e8v">
@@ -609,12 +610,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgR-v8-YBI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032.5581395348838" y="126.82403433476395"/>
+            <point key="canvasLocation" x="1931.1627906976744" y="126.82403433476395"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="z5G-M6-IP5">
             <objects>
-                <viewController id="6rJ-5k-uo3" sceneMemberID="viewController">
+                <viewController id="6rJ-5k-uo3" customClass="ProfileViewController" customModule="DreamJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jvw-rW-g96">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -662,17 +663,18 @@
                         <viewLayoutGuide key="safeArea" id="Cmw-GI-5HC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RM4-Hn-waz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFP-c9-AjY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-802" y="895"/>
+            <point key="canvasLocation" x="-675" y="898"/>
         </scene>
-        <!--View Controller-->
+        <!--Dashboard View Controller-->
         <scene sceneID="EsR-ex-ShL">
             <objects>
-                <viewController id="ViN-wx-ip1" sceneMemberID="viewController">
+                <viewController id="ViN-wx-ip1" customClass="DashboardViewController" customModule="DreamJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3XY-oJ-cEx">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yim-4g-fuj">
@@ -704,7 +706,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="MJf-y3-Zru" kind="showDetail" id="UHt-gi-Dk3"/>
+                                    <segue destination="MJf-y3-Zru" kind="show" id="UHt-gi-Dk3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1r8-3K-kl8">
@@ -716,7 +718,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Uen-tH-Szt" kind="presentation" id="rhH-xI-vgv"/>
+                                    <segue destination="Uen-tH-Szt" kind="show" id="rhH-xI-vgv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent Entries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci3-sP-W1Y">
@@ -756,7 +758,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="user_icon"/>
                                 <connections>
-                                    <segue destination="6rJ-5k-uo3" kind="showDetail" id="Q8b-Us-89z"/>
+                                    <segue destination="6rJ-5k-uo3" kind="show" id="Q8b-Us-89z"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-Xp-0Pn">
@@ -769,14 +771,34 @@
                         <viewLayoutGuide key="safeArea" id="i9T-4X-gTz"/>
                         <color key="backgroundColor" red="0.96841150519999997" green="0.95648497964969093" blue="0.80080381431064662" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yRR-4w-CGz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qa-bG-pSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-801" y="141"/>
+            <point key="canvasLocation" x="223.25581395348837" y="126.82403433476395"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ujK-Hg-6Iz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kJ9-8A-t8w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="2Yb-4I-6p0"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FUb-7o-CQa">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ViN-wx-ip1" kind="relationship" relationship="rootViewController" id="bvh-uv-rfs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixc-K2-5p2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-675.34883720930236" y="126.82403433476395"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rhH-xI-vgv"/>
+        <segue reference="XTi-S6-9zD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Dream_Journal_Icon" width="291" height="233"/>

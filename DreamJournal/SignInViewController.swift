@@ -89,7 +89,7 @@ class SignInViewController: UIViewController {
             if let user = users.first {
                 print("Login Successful")
                 // Successful login
-                performSegue(withIdentifier: "ToProfile", sender: user)
+                performSegue(withIdentifier: "ToDashboard", sender: user)
             } else {
                 // Invalid credentials, display an error message
                 let alert = UIAlertController(title: "Login Failed", message: "Invalid username or password!", preferredStyle: .alert)
@@ -103,13 +103,20 @@ class SignInViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "ToProfile" {
-               if let profileVC = segue.destination as? ProfileViewController, let user = sender as? UserTable {
+           if segue.identifier == "ToDashboard" {
+               if let dashboardVC = segue.destination as? DashboardViewController {
+                   let user = sender as? UserTable
+                   print("Print User:",user!)
+                   print("Print User.self:", user!.self)
+                   print("Print user.username:", user!.username!)
+                   
+                   dashboardVC.username = user!.username!
+                   
                    // Pass user data to the profile view controller
-                   profileVC.username = user.username!
-                   profileVC.firstName = user.firstName!
-                   profileVC.lastName = user.lastName!
-                   profileVC.phoneNumber = user.phoneNumber!
+//                   profileVC.username = user.username!
+//                   profileVC.firstName = user.firstName!
+//                   profileVC.lastName = user.lastName!
+//                   profileVC.phoneNumber = user.phoneNumber!
                }
            }
        }
