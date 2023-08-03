@@ -76,12 +76,12 @@ func seedUserData() {
         let user = UserTable(context: context)
         
         user.user_id = jsonObject["user_id"] as? Int16 ?? 0
-        user.firstname = jsonObject["firstname"] as? String
-        user.lastname = jsonObject["lastname"] as? String
+        user.firstName = jsonObject["firstname"] as? String
+        user.lastName = jsonObject["lastname"] as? String
         user.password = jsonObject["password"] as? String
         user.username = jsonObject["username"] as? String
         user.email = jsonObject["email"] as? String
-        user.phone_number = jsonObject["phone_number"] as? String
+        user.phoneNumber = jsonObject["phone_number"] as? String
       
         // Save the context after each dream is created
         do {

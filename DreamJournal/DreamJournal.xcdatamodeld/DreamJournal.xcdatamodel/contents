@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AppUser" representedClassName="AppUser" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="DreamEntryTable" representedClassName="DreamEntryTable" syncable="YES" codeGenerationType="class">
         <attribute name="category" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="String"/>
@@ -11,16 +19,12 @@
         <attribute name="title" attributeType="String"/>
         <attribute name="user_id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
-        <attribute name="password" optional="YES" attributeType="String"/>
-        <attribute name="username" optional="YES" attributeType="String"/>
-    </entity>
     <entity name="UserTable" representedClassName="UserTable" syncable="YES" codeGenerationType="class">
         <attribute name="email" attributeType="String"/>
-        <attribute name="firstname" attributeType="String" minValueString="4"/>
-        <attribute name="lastname" attributeType="String" minValueString="4"/>
+        <attribute name="firstName" attributeType="String" minValueString="4"/>
+        <attribute name="lastName" attributeType="String" minValueString="4"/>
         <attribute name="password" attributeType="String" minValueString="5"/>
-        <attribute name="phone_number" attributeType="String"/>
+        <attribute name="phoneNumber" attributeType="String"/>
         <attribute name="user_id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="username" attributeType="String" minValueString="4"/>
     </entity>

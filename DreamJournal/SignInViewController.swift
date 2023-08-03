@@ -23,10 +23,16 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var facebookView: UIView!
     @IBOutlet weak var appleView: UIView!
     
+    var receivedUsername: String?
+       var receivedPassword: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        if let username = receivedUsername, let password = receivedPassword {
+                   usernameTextField.text = username
+                   passwordTextField.text = password
+               }
        
         for credentialsView in [self.emailView , self.passwordView]
         {
@@ -52,10 +58,12 @@ class SignInViewController: UIViewController {
         passwordTextField.text = ""
         usernameTextField.becomeFirstResponder()
     }
+    
+    
 
-    @IBAction func LoginBtnPressed(_ sender: Any) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
-        {
+
+    @IBAction func LoginBtnPressed(_ sender: Any){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
         
@@ -63,25 +71,14 @@ class SignInViewController: UIViewController {
         
         guard let username = usernameTextField.text,
               let password = passwordTextField.text,
-              !username.isEmpty, !password.isEmpty else
-        {
+              !username.isEmpty, !password.isEmpty else {
             // Display an alert message if any field is empty
-            let alert = UIAlertController(title: "Login Failed", message: "username and password are required", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Login Failed", message: "Username and password are required", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
-            
-            // Shift focus to the empty text field
-            if usernameTextField.text?.isEmpty == true
-            {
-                usernameTextField.becomeFirstResponder()
-            }
-            else if passwordTextField.text?.isEmpty == true
-            {
-                passwordTextField.becomeFirstResponder()
-            }
             return
         }
-        
+
         // Create a fetch request to check if the user exists
         let fetchRequest: NSFetchRequest<UserTable> = UserTable.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "username = %@ AND password = %@", username, password)
@@ -89,11 +86,10 @@ class SignInViewController: UIViewController {
         do {
             let users = try context.fetch(fetchRequest)
             
-            if let user = users.first
-            {
+            if let user = users.first {
                 print("Login Successful")
                 // Successful login
-                performSegue(withIdentifier: "ToProfile", sender: nil)
+                performSegue(withIdentifier: "ToProfile", sender: user)
             } else {
                 // Invalid credentials, display an error message
                 let alert = UIAlertController(title: "Login Failed", message: "Invalid username or password!", preferredStyle: .alert)
@@ -105,6 +101,72 @@ class SignInViewController: UIViewController {
             print("Failed to fetch user: \(error)")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "ToProfile" {
+               if let profileVC = segue.destination as? ProfileViewController, let user = sender as? UserTable {
+                   // Pass user data to the profile view controller
+                   profileVC.username = user.username!
+                   profileVC.firstName = user.firstName!
+                   profileVC.lastName = user.lastName!
+                   profileVC.phoneNumber = user.phoneNumber!
+               }
+           }
+       }
+
+    
+//    {
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
+//        {
+//            return
+//        }
+//
+//        let context = appDelegate.persistentContainer.viewContext
+//
+//        guard let username = usernameTextField.text,
+//              let password = passwordTextField.text,
+//              !username.isEmpty, !password.isEmpty else
+//        {
+//            // Display an alert message if any field is empty
+//            let alert = UIAlertController(title: "Login Failed", message: "username and password are required", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            present(alert, animated: true, completion: nil)
+//
+//            // Shift focus to the empty text field
+//            if usernameTextField.text?.isEmpty == true
+//            {
+//                usernameTextField.becomeFirstResponder()
+//            }
+//            else if passwordTextField.text?.isEmpty == true
+//            {
+//                passwordTextField.becomeFirstResponder()
+//            }
+//            return
+//        }
+//
+//        // Create a fetch request to check if the user exists
+//        let fetchRequest: NSFetchRequest<UserTable> = UserTable.fetchRequest()
+//        fetchRequest.predicate = NSPredicate(format: "username = %@ AND password = %@", username, password)
+//
+//        do {
+//            let users = try context.fetch(fetchRequest)
+//
+//            if let user = users.first
+//            {
+//                print("Login Successful")
+//                // Successful login
+//                performSegue(withIdentifier: "ToProfile", sender: nil)
+//            } else {
+//                // Invalid credentials, display an error message
+//                let alert = UIAlertController(title: "Login Failed", message: "Invalid username or password!", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                present(alert, animated: true, completion: nil)
+//            }
+//        } catch {
+//            // Handle the error appropriately (e.g., display an alert)
+//            print("Failed to fetch user: \(error)")
+//        }
+//    }
     
     @IBAction func forgotPassBtn(_ sender: Any) {
         let refreshAlert = UIAlertController(title: "Sign out?", message: "You can always access your content by signing back in ", preferredStyle: UIAlertController.Style.alert)
