@@ -12,21 +12,23 @@ class DashboardViewController : UIViewController{
     
     var user : UserTable?
     
-    var username:String = ""
-    var firstname:String = ""
-    var lastname:String = ""
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(user ?? "User didn't pass")
-        print(username)
-        print(firstname)
-        print(lastname)
-        
+    }
+    
+    @IBAction func OnViewAllClicked(_ sender: Any) {
+        performSegue(withIdentifier: "ToListView", sender: user)
     }
     
     
     
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToListView" {
+            if let listVC = segue.destination as? DreamTableViewController ,let user = sender as? UserTable {
+                    listVC.user = user
+                }
+            }
+        }
+    }
+

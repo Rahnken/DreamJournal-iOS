@@ -24,6 +24,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
+    var userCount:Int = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +66,29 @@ class SignUpViewController: UIViewController {
                print("Failed to get URL for 'users.json' in the main bundle.")
            }
        }
+    func getUserIDInfo(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<UserTable> = UserTable.fetchRequest()
+        do {
+            let users = try context.fetch(fetchRequest)
+            print("Users count: ",users.count)
+            userCount = users.count
+        }
+        catch {
+            print("Failed to fetch Users: \(error)")
+        }
+    }
     
     func saveUserDataToCoreData() {
            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                return
            }
+            getUserIDInfo()
 
            let context = appDelegate.persistentContainer.viewContext
            let newUser = UserTable(context: context)
@@ -78,6 +98,8 @@ class SignUpViewController: UIViewController {
            newUser.firstName = firstNameTextField.text
            newUser.lastName = lastNameTextField.text
            newUser.phoneNumber = phoneNumberTextField.text
+        
+           newUser.user_id = Int16(userCount + 1)
 
            do {
                try context.save()
@@ -87,31 +109,6 @@ class SignUpViewController: UIViewController {
            }
        }
 
-//    func saveUserDataToCoreData() {
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-//            return
-//        }
-//
-//        let context = appDelegate.persistentContainer.viewContext
-//        let entity = NSEntityDescription.entity(forEntityName: "AppUser", in: context)!
-//        let user = NSManagedObject(entity: entity, insertInto: context)
-//
-//        user.setValue(emailTextField.text ?? "", forKeyPath: "email")
-//        user.setValue(usernameTextfield.text ?? "", forKeyPath: "username")
-//        user.setValue(passwordTextField.text ?? "", forKeyPath: "password")
-//        user.setValue(firstNameTextField.text ?? "", forKeyPath: "firstName")
-//        user.setValue(lastNameTextField.text ?? "", forKeyPath: "lastName")
-//        user.setValue(phoneNumberTextField.text ?? "", forKeyPath: "phoneNumber")
-//
-//        do {
-//            try context.save()
-//            print("User data saved to Core Data successfully.")
-//        } catch let error as NSError {
-//            print("Could not save user data. Error: \(error), \(error.userInfo)")
-//        }
-//    }
-
-    
     @IBAction func CreateUser(_ sender: Any) {
         
         saveUserDataToCoreData()
@@ -120,30 +117,6 @@ class SignUpViewController: UIViewController {
         
     }
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ToProfile" {
-//            if let profileVC = segue.destination as? ProfileViewController {
-//                profileVC.username = usernameTextfield.text ?? ""
-//                profileVC.firstName = firstNameTextField.text ?? ""
-//                profileVC.lastName = lastNameTextField.text ?? ""
-//                profileVC.phoneNumber = phoneNumberTextField.text ?? ""
-//            }
-//        }
-//    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            if segue.identifier == "toLogin" {
-//                if let signInVC = segue.destination as? SignInViewController {
-//                    // Pass the user credentials to SignInViewController
-//                    signInVC.receivedUsername = usernameTextfield.text
-//                    signInVC.receivedPassword = passwordTextField.text
-//                }
-//            } else if segue.identifier == "ToProfile" {
-//                // ... Code to pass data to the profile view controller ...
-//            }
-//        }
-
     
     
 }

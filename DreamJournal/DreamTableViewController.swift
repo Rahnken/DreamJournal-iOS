@@ -4,9 +4,11 @@ import CoreData
 class DreamTableViewController: UITableViewController
 {
     var dreams:[DreamEntryTable]=[]
+    var user:UserTable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchData()
     }
     func fetchData()
@@ -19,7 +21,9 @@ class DreamTableViewController: UITableViewController
         let context = appDelegate.persistentContainer.viewContext
                 
         let fetchRequest: NSFetchRequest<DreamEntryTable> = DreamEntryTable.fetchRequest()
-        let user_id = 0
+        let user_id = user?.user_id ?? 0
+        print(user?.username! ?? "User Passed Incorrectly, Using default value")
+        print(user_id)
         let filterPredicate = NSPredicate(format: "user_id == %@", argumentArray: [user_id])
                 
         fetchRequest.predicate = filterPredicate

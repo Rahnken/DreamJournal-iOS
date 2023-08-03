@@ -140,7 +140,7 @@
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
                                             <action selector="LoginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4D-Ms-wM0"/>
-                                            <segue destination="kJ9-8A-t8w" kind="show" identifier="ToDashboard" id="EUx-BG-yTM"/>
+                                            <segue destination="kJ9-8A-t8w" kind="presentation" identifier="ToDashboard" modalPresentationStyle="fullScreen" id="EUx-BG-yTM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -348,13 +348,13 @@
                                 <rect key="frame" x="33" y="321" width="345" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartInsertDeleteType="no" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oiV-7N-ctz">
                                 <rect key="frame" x="33" y="379" width="345" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" textContentType="new-password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHx-to-46K">
                                 <rect key="frame" x="33" y="442" width="345" height="34"/>
@@ -396,6 +396,8 @@
                         <outlet property="firstNameTextField" destination="ZHx-to-46K" id="6Oo-Xo-zb1"/>
                         <outlet property="lastNameTextField" destination="HqR-8k-ui1" id="xHb-Ck-zKN"/>
                         <outlet property="passwordTextField" destination="LSB-gn-B0K" id="6H6-4I-SrW"/>
+                        <outlet property="phoneNumberTextField" destination="4o8-En-Yyp" id="kb4-nh-nke"/>
+                        <outlet property="usernameTextfield" destination="D1n-0B-iGI" id="FLI-nX-c3T"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="toLogin" id="HEe-gr-kT7"/>
                     </connections>
                 </viewController>
@@ -408,7 +410,7 @@
             <objects>
                 <tableViewController id="MJf-y3-Zru" customClass="DreamTableViewController" customModule="DreamJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="KCQ-D3-6Xh">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -456,14 +458,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Explore Your Dreams" id="n8j-CK-IMO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="wQv-oI-4eW"/>
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="yqy-uK-g5b">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lTi-jO-zzY">
-                                <rect key="frame" x="20" y="11" width="106" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Edit Profile"/>
-                            </button>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="296-Q1-B4P">
                             <connections>
                                 <segue destination="Uen-tH-Szt" kind="show" identifier="AddEditDream" id="XTi-S6-9zD"/>
@@ -480,7 +474,7 @@
             <objects>
                 <viewController id="Uen-tH-Szt" customClass="AddJournalEntryViewController" customModule="DreamJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bT1-BL-92N">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrC-7F-gtC">
@@ -617,7 +611,7 @@
             <objects>
                 <viewController id="6rJ-5k-uo3" customClass="ProfileViewController" customModule="DreamJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jvw-rW-g96">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dream_Journal_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="SwA-rS-nyi">
@@ -667,14 +661,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFP-c9-AjY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-675" y="898"/>
+            <point key="canvasLocation" x="223" y="829"/>
         </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="EsR-ex-ShL">
             <objects>
                 <viewController id="ViN-wx-ip1" customClass="DashboardViewController" customModule="DreamJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3XY-oJ-cEx">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yim-4g-fuj">
@@ -706,7 +700,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="MJf-y3-Zru" kind="show" id="UHt-gi-Dk3"/>
+                                    <action selector="OnViewAllClicked:" destination="ViN-wx-ip1" eventType="touchUpInside" id="LCv-3G-BOr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1r8-3K-kl8">
@@ -772,6 +766,9 @@
                         <color key="backgroundColor" red="0.96841150519999997" green="0.95648497964969093" blue="0.80080381431064662" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="yRR-4w-CGz"/>
+                    <connections>
+                        <segue destination="MJf-y3-Zru" kind="show" identifier="ToListView" id="ALL-ds-nru"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qa-bG-pSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -784,7 +781,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="2Yb-4I-6p0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FUb-7o-CQa">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -798,7 +795,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XTi-S6-9zD"/>
+        <segue reference="rhH-xI-vgv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Dream_Journal_Icon" width="291" height="233"/>
