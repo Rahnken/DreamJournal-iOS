@@ -132,17 +132,17 @@ class SignUpViewController: UIViewController {
 //        }
 //    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "toLogin" {
-                if let signInVC = segue.destination as? SignInViewController {
-                    // Pass the user credentials to SignInViewController
-                    signInVC.receivedUsername = usernameTextfield.text
-                    signInVC.receivedPassword = passwordTextField.text
-                }
-            } else if segue.identifier == "ToProfile" {
-                // ... Code to pass data to the profile view controller ...
-            }
-        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            if segue.identifier == "toLogin" {
+//                if let signInVC = segue.destination as? SignInViewController {
+//                    // Pass the user credentials to SignInViewController
+//                    signInVC.receivedUsername = usernameTextfield.text
+//                    signInVC.receivedPassword = passwordTextField.text
+//                }
+//            } else if segue.identifier == "ToProfile" {
+//                // ... Code to pass data to the profile view controller ...
+//            }
+//        }
 
     
     
