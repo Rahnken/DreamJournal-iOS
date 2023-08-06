@@ -21,6 +21,9 @@ class DashboardViewController : UIViewController{
         performSegue(withIdentifier: "ToListView", sender: user)
     }
     
+    @IBAction func onProfileButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "ToProfile", sender: user)
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -29,6 +32,11 @@ class DashboardViewController : UIViewController{
                     listVC.user = user
                 }
             }
+        else if segue.identifier == "ToProfile"{
+            if let profileVC = segue.destination as? ProfileViewController , let user = sender as? UserTable {
+                profileVC.user = user
+            }
+        }
         }
     }
 
