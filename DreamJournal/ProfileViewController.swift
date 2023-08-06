@@ -21,23 +21,19 @@ class ProfileViewController : UIViewController {
     
     @IBOutlet weak var phoneNumberTextfield: UITextField!
     
+    var user : UserTable?
     
     
-    var username :  String = ""
-    var firstName : String = ""
-    var lastName : String = ""
-    var phoneNumber : String = ""
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        usernameTextfield.text = username
-        firstNameTextfield.text = firstName
-        lastNameTextfield.text = lastName
-        phoneNumberTextfield.text = phoneNumber
-        
+        usernameTextfield.text = user?.username
+        firstNameTextfield.text = user?.firstName
+        lastNameTextfield.text = user?.lastName
+        phoneNumberTextfield.text = user?.phoneNumber
         // Do any additional setup after loading the view.
     }
     
@@ -59,13 +55,5 @@ class ProfileViewController : UIViewController {
             print("Failed to save data: \(error)")
         }
     }
-    
-    
-    @IBAction func addNewJournalButton(_ sender: Any) {
-        
-        
-    }
-    
-    
     
 }

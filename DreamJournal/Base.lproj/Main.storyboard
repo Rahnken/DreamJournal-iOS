@@ -658,6 +658,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="RM4-Hn-waz"/>
+                    <connections>
+                        <outlet property="firstNameTextfield" destination="ReZ-tQ-6lM" id="WQq-KJ-R3t"/>
+                        <outlet property="lastNameTextfield" destination="C2C-SA-8BZ" id="3JX-wa-YOS"/>
+                        <outlet property="phoneNumberTextfield" destination="VcP-J8-ftH" id="TgV-uI-Wsa"/>
+                        <outlet property="usernameTextfield" destination="fgj-qe-qGs" id="w0G-7P-rNb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFP-c9-AjY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -752,7 +758,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="user_icon"/>
                                 <connections>
-                                    <segue destination="6rJ-5k-uo3" kind="show" id="Q8b-Us-89z"/>
+                                    <action selector="onProfileButtonClicked:" destination="ViN-wx-ip1" eventType="touchUpInside" id="YNp-JL-DZl"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-Xp-0Pn">
@@ -768,6 +774,7 @@
                     <navigationItem key="navigationItem" id="yRR-4w-CGz"/>
                     <connections>
                         <segue destination="MJf-y3-Zru" kind="show" identifier="ToListView" id="ALL-ds-nru"/>
+                        <segue destination="6rJ-5k-uo3" kind="show" identifier="ToProfile" id="xtW-5n-1sx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qa-bG-pSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
