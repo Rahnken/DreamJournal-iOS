@@ -175,6 +175,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="60"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="googleSignin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjy-0Y-EwL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.77254901960784317" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
