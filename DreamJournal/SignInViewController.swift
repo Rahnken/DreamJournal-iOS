@@ -7,8 +7,10 @@
 
 import UIKit
 import CoreData
+import GoogleSignIn
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, GIDSignInDelegate {
+    
     
     
     @IBOutlet weak var emailView: UIView!
@@ -28,6 +30,9 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        GIDSignIn.sharedInstance().delegate = self
+        
         // Do any additional setup after loading the view.
         if let username = receivedUsername, let password = receivedPassword {
             usernameTextField.text = username
@@ -60,7 +65,16 @@ class SignInViewController: UIViewController {
     }
     
     
+    @IBAction func googleSignin(_ sender: Any) {
+        GIDSignIn.sharedInstance().presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+    }
     
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            print(user.userID!)
+        }
+    }
     
     @IBAction func LoginBtnPressed(_ sender: Any){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -101,19 +115,19 @@ class SignInViewController: UIViewController {
             print("Failed to fetch user: \(error)")
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ToProfile" {
-            // Pass the user object to the ProfileViewController
-            if let profileVC = segue.destination as? ProfileViewController,
-               let user = sender as? UserTable {
-                // Set the user information properties in ProfileViewController
-                profileVC.username = user.username ?? ""
-                profileVC.firstName = user.firstname ?? ""
-                profileVC.lastName = user.lastname ?? ""
-                profileVC.phoneNumber = user.phone_number ?? ""
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "ToProfile" {
+//            // Pass the user object to the ProfileViewController
+//            if let profileVC = segue.destination as? ProfileViewController,
+//               let user = sender as? UserTable {
+//                // Set the user information properties in ProfileViewController
+//                profileVC.username = user.username ?? ""
+//                profileVC.firstName = user.firstname ?? ""
+//                profileVC.lastName = user.lastname ?? ""
+//                profileVC.phoneNumber = user.phone_number ?? ""
+//            }
+//        }
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToDashboard" {
