@@ -78,9 +78,11 @@ class DreamTableViewController: UITableViewController
                    // Editing existing movie
                    let dream = dreams[indexPath.row]
                    addEditVC.dream = dream
+                    addEditVC.user = user
                 } else {
                     // Adding new movie
                     addEditVC.dream = nil
+                    addEditVC.user = user
                 }
             }
         }

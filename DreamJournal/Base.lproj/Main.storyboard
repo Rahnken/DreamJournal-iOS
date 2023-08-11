@@ -721,7 +721,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Uen-tH-Szt" kind="show" id="rhH-xI-vgv"/>
+                                    <action selector="onAddButtonClicked:" destination="ViN-wx-ip1" eventType="touchUpInside" id="PaG-Ja-rNc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent Entries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci3-sP-W1Y">
@@ -778,6 +778,7 @@
                     <connections>
                         <segue destination="MJf-y3-Zru" kind="show" identifier="ToListView" id="ALL-ds-nru"/>
                         <segue destination="6rJ-5k-uo3" kind="show" identifier="ToProfile" id="xtW-5n-1sx"/>
+                        <segue destination="Uen-tH-Szt" kind="show" identifier="AddEditDream" id="on4-yA-gQS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qa-bG-pSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -805,7 +806,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rhH-xI-vgv"/>
+        <segue reference="on4-yA-gQS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Dream_Journal_Icon" width="291" height="233"/>

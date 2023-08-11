@@ -115,22 +115,16 @@ class SignInViewController: UIViewController, GIDSignInDelegate {
             print("Failed to fetch user: \(error)")
         }
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ToProfile" {
-//            // Pass the user object to the ProfileViewController
-//            if let profileVC = segue.destination as? ProfileViewController,
-//               let user = sender as? UserTable {
-//                // Set the user information properties in ProfileViewController
-//                profileVC.username = user.username ?? ""
-//                profileVC.firstName = user.firstname ?? ""
-//                profileVC.lastName = user.lastname ?? ""
-//                profileVC.phoneNumber = user.phone_number ?? ""
-//            }
-//        }
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ToDashboard" {
+        if segue.identifier == "ToProfile" {
+            // Pass the user object to the ProfileViewController
+            if let profileVC = segue.destination as? ProfileViewController,
+               let user = sender as? UserTable {
+                // Set the user information properties in ProfileViewController
+                profileVC.user = user
+            }
+        }
+    if segue.identifier == "ToDashboard" {
             if let navigationController = segue.destination as? UINavigationController,
                let dashboardVC = navigationController.topViewController as? DashboardViewController {
                 if let user = sender as? UserTable {
