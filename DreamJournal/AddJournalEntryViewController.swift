@@ -19,6 +19,7 @@ class AddJournalEntryViewController : UIViewController ,UIImagePickerControllerD
     @IBOutlet weak var datePicker: UIDatePicker!
     
     var dream : DreamEntryTable?
+    var user : UserTable?
     // Create instance of UI Image Picker
     let imagePicker = UIImagePickerController()
     
@@ -30,7 +31,6 @@ class AddJournalEntryViewController : UIViewController ,UIImagePickerControllerD
         if let dream = dream {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "YYYY-MM-DD"
-            
             titleTextField.text = dream.title
             descriptionTextView.text = dream.dream_description
             categoriesTextField.text = dream.category
@@ -71,8 +71,8 @@ class AddJournalEntryViewController : UIViewController ,UIImagePickerControllerD
             dream.feeling=feeling
             dream.recurringDream=reccuringDream
             dream.date=date
-            dream.user_id=0
-            dream.dream_id=1400
+            dream.user_id=dream.user_id
+            dream.dream_id=dream.dream_id
             
         } else{
             let newDream = DreamEntryTable(context: context)
@@ -82,8 +82,8 @@ class AddJournalEntryViewController : UIViewController ,UIImagePickerControllerD
             newDream.feeling=feeling
             newDream.recurringDream=reccuringDream
             newDream.date=date
-            newDream.user_id=0
-            newDream.dream_id=1400
+            newDream.user_id = user!.user_id
+            newDream.dream_id = 1400
         }
         do {
             try context.save()
