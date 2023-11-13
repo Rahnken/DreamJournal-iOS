@@ -3,6 +3,8 @@ import Foundation
 import UIKit
 import CoreData
 
+// TODO: Fix this to set up default data
+
 func seedDreamData() {
     guard let url = Bundle.main.url(forResource: "dreams", withExtension: "json") else {
         print("JSON file not found.")
