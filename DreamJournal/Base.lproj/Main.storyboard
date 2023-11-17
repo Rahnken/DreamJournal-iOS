@@ -176,6 +176,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="60"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="googleSignin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjy-0Y-EwL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.77254901960784317" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
@@ -719,7 +722,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="40"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Uen-tH-Szt" kind="show" id="rhH-xI-vgv"/>
+                                    <action selector="onAddButtonClicked:" destination="ViN-wx-ip1" eventType="touchUpInside" id="PaG-Ja-rNc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent Entries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci3-sP-W1Y">
@@ -776,6 +779,7 @@
                     <connections>
                         <segue destination="MJf-y3-Zru" kind="show" identifier="ToListView" id="ALL-ds-nru"/>
                         <segue destination="6rJ-5k-uo3" kind="show" identifier="ToProfile" id="xtW-5n-1sx"/>
+                        <segue destination="Uen-tH-Szt" kind="show" identifier="AddEditDream" id="on4-yA-gQS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qa-bG-pSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -804,6 +808,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="XTi-S6-9zD"/>
+
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Dream_Journal_Icon" width="291" height="233"/>
