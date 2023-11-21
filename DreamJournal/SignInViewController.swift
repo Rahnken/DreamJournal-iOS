@@ -123,12 +123,15 @@ class SignInViewController: UIViewController, GIDSignInDelegate {
                 // Set the user information properties in ProfileViewController
                 profileVC.user = user
             }
-        }
-    if segue.identifier == "ToDashboard" {
-            if let navigationController = segue.destination as? UINavigationController,
-               let dashboardVC = navigationController.topViewController as? DashboardViewController {
-                if let user = sender as? UserTable {
-                    dashboardVC.user = user
+
+            
+            if segue.identifier == "ToDashboard" {
+                if let navigationController = segue.destination as? UINavigationController,
+                   let dashboardVC = navigationController.topViewController as? DashboardViewController {
+                    if let user = sender as? UserTable {
+                        dashboardVC.user = user
+                    }
+
                 }
             }
         }
