@@ -7,9 +7,11 @@
 
 import UIKit
 import CoreData
-import GoogleSignIn
+import FirebaseAuth
+import FirebaseFirestore
 
-class SignInViewController: UIViewController, GIDSignInDelegate {
+
+class SignInViewController: UIViewController {
     
     
     
@@ -30,8 +32,6 @@ class SignInViewController: UIViewController, GIDSignInDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GIDSignIn.sharedInstance().delegate = self
         
         // Do any additional setup after loading the view.
         if let username = receivedUsername, let password = receivedPassword {
@@ -63,58 +63,72 @@ class SignInViewController: UIViewController, GIDSignInDelegate {
         passwordTextField.text = ""
         usernameTextField.becomeFirstResponder()
     }
+  
     
-    
-    @IBAction func googleSignin(_ sender: Any) {
-        GIDSignIn.sharedInstance().presentingViewController = self
-        GIDSignIn.sharedInstance().signIn()
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if error != nil {
-            print(user.userID!)
-        }
-    }
-    
-    @IBAction func LoginBtnPressed(_ sender: Any){
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        guard let username = usernameTextField.text,
-              let password = passwordTextField.text,
-              !username.isEmpty, !password.isEmpty else {
-            // Display an alert message if any field is empty
-            let alert = UIAlertController(title: "Login Failed", message: "Username and password are required", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
-            return
-        }
-        
-        // Create a fetch request to check if the user exists
-        let fetchRequest: NSFetchRequest<UserTable> = UserTable.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "username = %@ AND password = %@", username, password)
-        
-        do {
-            let users = try context.fetch(fetchRequest)
+    @IBAction func LoginBtnPressed(_ sender: Any) {
+        guard let username = usernameTextField.text, let password = passwordTextField.text else { print("Please enter both username and password."); return}
             
-            if let user = users.first {
-                print("Login Successful")
-                // Successful login
-                performSegue(withIdentifier: "ToDashboard", sender: user)
-            } else {
-                // Invalid credentials, display an error message
-                let alert = UIAlertController(title: "Login Failed", message: "Invalid username or password!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                present(alert, animated: true, completion: nil)
+            // Retrieve the email associated with the username
+            let db = Firestore.firestore()
+            let docRef = db.collection("usernames")
+            .document(username)
+            docRef.getDocument {
+                document,
+                error in
+                if let document = document,
+                   document.exists,
+                   let data = document.data(),
+                   let email = data["email"] as? String {
+                    // Authenticate with Firebase using the retrieved email
+                    Auth.auth().signIn(
+                        withEmail: email,
+                        password: password
+                    ) {
+                        authResult,
+                        error in
+                        if let error = error {
+                            print(
+                                "Login failed: \(error.localizedDescription)"
+                            )
+                            self.displayErrorMessage(
+                                message: "Authentication Failed"
+                            )
+                            return
+                        }
+                        
+                        print(
+                            "User logged in successfully."
+                        )
+                        DispatchQueue.main.async {
+                            self.performSegue(
+                                withIdentifier: "ToDashboard",
+                                sender: nil
+                            )
+                        }
+                    }
+                } else {
+                    print(
+                        "Username not found."
+                    )
+                    
+                }
             }
-        } catch {
-            // Handle the error appropriately (e.g., display an alert)
-            print("Failed to fetch user: \(error)")
+            
         }
-    }
+    
+    func displayErrorMessage(message: String)
+        {
+            let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+                self.ClearLoginTextFields() // Clear text fields and set focus to username
+            })
+            
+            DispatchQueue.main.async
+            {
+                self.present(alertController, animated: true)
+            }
+        }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToProfile" {
             // Pass the user object to the ProfileViewController

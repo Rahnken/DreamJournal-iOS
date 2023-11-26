@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
     
@@ -110,10 +112,41 @@ class SignUpViewController: UIViewController {
        }
 
     @IBAction func CreateUser(_ sender: Any) {
+        guard let username = usernameTextfield.text,
+                      let email = emailTextField.text,
+                      let password = passwordTextField.text,
+                      let confirmPassword = confirmPasswordTextField.text,
+                      let firstName = firstNameTextField.text,
+                      let lastName = lastNameTextField.text,
+                      let phoneNumber = phoneNumberTextField.text,
+                      password == confirmPassword else {
+                    print("Please enter valid email and matching passwords.")
+                    return
+                }
+
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    if let error = error {
+                        print("Registration failed: \(error.localizedDescription)")
+                        return
+                    }
+
+                    // Store the username and email mapping in Firestore
+                    let db = Firestore.firestore()
+                    db.collection("usernames").document(username).setData(["email": email]) { err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!")
+                        }
+                    }
+
+                    print("User registered successfully.")
+                    DispatchQueue.main.async {
+                        
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
         
-        saveUserDataToCoreData()
-//        saveUserDataToJSON()
-        performSegue(withIdentifier: "toLogin", sender: nil)
         
     }
     

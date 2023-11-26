@@ -1,39 +1,52 @@
 import UIKit
-import CoreData
+
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class DreamTableViewController: UITableViewController
 {
-    var dreams:[DreamEntryTable]=[]
+    var dreamList:[DreamEntryTable]=[]
     var user:UserTable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchData()
+        fetchDreamsFromFirestore()
     }
-    func fetchData()
-    {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else
-        {
-            return
-        }
+    func fetchDreamsFromFirestore() {
+        let db = Firestore.firestore()
+        db.collection("dreams").getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error fetching documents: \(error)")
+                return
+            }
+            
+            var fetchedDreams: [DreamEntryTable] = []
+            
+            for document in snapshot!.documents {
+                let documentID = document.documentID
+                var dreamData = document.data()
                 
-        let context = appDelegate.persistentContainer.viewContext
-                
-        let fetchRequest: NSFetchRequest<DreamEntryTable> = DreamEntryTable.fetchRequest()
-        let user_id = user?.user_id ?? 0
-        print(user?.username! ?? "User Passed Incorrectly, Using default value")
-        print(user_id)
-        let filterPredicate = NSPredicate(format: "user_id == %@", argumentArray: [user_id])
-                
-        fetchRequest.predicate = filterPredicate
-        do {
-                dreams = try context.fetch(fetchRequest)
-                tableView.reloadData()
-        } catch {
-                    print("Failed to fetch data: \(error)")
+                // Process data as needed from the document snapshot
+                // For instance, if your DreamEntryTable has properties like "title" and "description":
+                let title = dreamData["title"] as? String ?? ""
+                let description = dreamData["description"] as? String ?? ""
+                var dream : DreamEntryTable?
+                // Create a DreamEntryTable instance using the extracted data
+                if let dream = dream {
+                    dream.title = title
+                    dream.dream_description = description
                 }
+                fetchedDreams.append(dream!)
+            }
+            
+            DispatchQueue.main.async {
+                self.dreamList = fetchedDreams
+                self.tableView.reloadData()
+            }
         }
+    }
+    
 
     // MARK: - Table view data source
 
@@ -42,16 +55,16 @@ class DreamTableViewController: UITableViewController
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dreams.count
+        return dreamList.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DreamEntry", for: indexPath) as! DreamTableViewCell
-        let dream = dreams[indexPath.row]
+        let dream = dreamList[indexPath.row]
         
-        cell.titleLabel?.text = dream.title
-        cell.descriptionLabel?.text = dream.dream_description
+        cell.titleLabel?.text = dream.title?.capitalized
+        cell.descriptionLabel?.text? = dream.dream_description!.capitalized
         cell.dateLabel?.text = dream.date
 
         return cell
@@ -76,7 +89,7 @@ class DreamTableViewController: UITableViewController
                 if let indexPath = sender as? IndexPath
                 {
                    // Editing existing movie
-                   let dream = dreams[indexPath.row]
+                   let dream = dreamList[indexPath.row]
                    addEditVC.dream = dream
                     addEditVC.user = user
                 } else {

@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-import GoogleSignIn
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,19 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        GIDSignIn.sharedInstance().clientID = "87077025263-bhdklscolv2u783ugv410qa6oemfo448.apps.googleusercontent.com"
+       
 
 //        deleteUserData()
 //        deleteDreamData()
 //        seedUserData()
 
 //        seedDreamData()
+        FirebaseApp.configure()
         return true
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
-    }
+
 
     // MARK: UISceneSession Lifecycle
 
